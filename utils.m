@@ -86,7 +86,6 @@ XL:=function(G,D)
 					f:=NormalForm(Mon[l]*g,FE);
 					j:=0;
 					i+:=1;
-					i;
 					for m in Monomials(f) do
 						j:=Index(Mon,m,j+1);
 						M[i,j]:=1;
