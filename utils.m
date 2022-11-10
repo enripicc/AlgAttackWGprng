@@ -78,6 +78,7 @@ XL:=function(G,D)
 	M:=ZeroMatrix(GF(2),expectedEq(G,n,D),&+[Binomial(n,i): i in [0..(D)]]);
 	i:=0;
 	j:=0;
+	printf "Generating the matrix...";
 	for g in G do
 		if Degree(g) lt D then
       d:=D-Degree(g);
@@ -96,10 +97,12 @@ XL:=function(G,D)
       end for;
     end if;
 	end for;
+	printf "end\n";
 	printf "Reducing...";
 	time M:=EchelonForm(M);
 	RemoveZeroRows(~M);
-	printf "Sol:%o\n",[Polynomial(Eltseq(v),Mon): v in Rows(M)[(Nrows(M)-n)..Nrows(M)]];
+	printf "end\n";
+	printf "Sol:%o\n",[Polynomial(Eltseq(v),Mon): v in Rows(M)[(Nrows(M)-n+1)..Nrows(M)]];
 	printf "Nrows:%o\n",Nrows(M);
 	return M;
 end function;
