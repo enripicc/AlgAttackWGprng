@@ -51,7 +51,6 @@ wgEq:=procedure(~G,S,Z,t)
   i:=1;
   j:=1;
   repeat
-    j;
     if IsZero(Z[j]) then
       InsertEq(~G,~i,S,0);
     else
