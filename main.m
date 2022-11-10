@@ -18,7 +18,10 @@ Key:=[Random(GF(2)): i in [1..n]];
 Z:=WGPRNG(Key,t);
 G:=[Zero(R): i in [1..M]];
 S:=x;
+printf "Generating the equations...";
 wgEq(~G,S,Z,t);
+printf "end\n";
+printf "XL algorithm phase...\n";
 time M:=XL(G,D);
 Nrows(M);
 
