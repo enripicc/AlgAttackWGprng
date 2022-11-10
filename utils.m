@@ -71,10 +71,10 @@ XL:=function(G,D)
 	R:=Parent(G[1]);
 	n:=Rank(R);
 	FE:=[Name(R,i)^2 +Name(R,i): i in [1..n]];
-	time Mon:=&cat[[NormalForm(m,FE): m in MonomialsOfDegree(R,d)]: d in [0..D]];
-	time Mon:=SetToSequence(SequenceToSet(Mon));
-	time Sort(~Mon);
-	time Reverse(~Mon);
+	Mon:=&cat[[NormalForm(m,FE): m in MonomialsOfDegree(R,d)]: d in [0..D]];
+	Mon:=SetToSequence(SequenceToSet(Mon));
+	Sort(~Mon);
+	Reverse(~Mon);
 	M:=ZeroMatrix(GF(2),expectedEq(G,n,D),&+[Binomial(n,i): i in [0..(D)]]);
 	i:=0;
 	j:=0;
